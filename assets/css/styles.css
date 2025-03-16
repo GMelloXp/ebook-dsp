@@ -22,6 +22,7 @@ body {
     color: var(--text-color);
     margin: 0;
     padding: 0;
+    min-width: 538px;
     text-align: center;
 }
 
@@ -39,7 +40,9 @@ h1, h2 {
 
 ul {
   list-style: none;
-  padding: 0;
+  /*padding: 0; */
+  padding-left: 20px; /* Ajusta o recuo da lista */
+  list-style-position: inside; /* Faz os marcadores ficarem alinhados com o texto */
 }
 
 ul li {
@@ -50,11 +53,19 @@ ul li {
   border-radius: 5px;
   font-weight: bold;
   transition: 0.3s;
+  text-align: justify;
 }
 
 ul li:hover {
   background: #388E3C;
   transform: scale(1.05);
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
 }
 
 .ebook-infos img {
@@ -122,6 +133,8 @@ ul li:hover {
   background: var(--primary-color);
   margin: 10px 0;
   padding: 15px;
+  padding-left: 20px;
+  list-style-position: inside; /* Faz os marcadores ficarem alinhados com o texto */
   border-radius: 5px;
   font-weight: bold;
   transition: 0.3s;
@@ -134,8 +147,8 @@ ul li:hover {
   font-weight: bold;
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: center;  
   font-size: 18px;
   color: var(--white);
 }
@@ -148,6 +161,7 @@ ul li:hover {
 }
 .faq-question::after {
   content: '\25BC';
+  margin-left: auto;
   font-size: 14px;
   transition: transform 0.3s ease;
   color: #f9f9f9;
@@ -159,6 +173,33 @@ ul li:hover {
   display: block;
   animation: fadeIn 0.3s ease-in-out;
 }
+
+.fa-question {
+  color: red;
+  margin: auto 20px;
+ 
+}
+
+/* teste */
+
+
+.faq ul li {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.faq ul li:not(.active) {
+  color: #333; /* Mantém a pergunta normal */
+}
+
+.faq ul li:not(.active) strong + br,
+.faq ul li:not(.active) strong + br + span {
+  display: none; /* Esconde a resposta */
+}
+
+
+/* teste */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
